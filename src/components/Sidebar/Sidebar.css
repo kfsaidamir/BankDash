@@ -23,3 +23,14 @@
 .sidebar-link i {
     margin-right: 10px;
 }
+.menu-button {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (max-width:768px) {
+    .sidebar {
+        display: none;
+        border-right:  transparent;
+    }
+  }
