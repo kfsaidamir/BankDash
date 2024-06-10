@@ -16,16 +16,27 @@ import {
   DrawerBody,
   useDisclosure,
   useColorMode,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { MdOutlineCreditScore } from "react-icons/md";
-import { CiSearch } from "react-icons/ci";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdOutlineNotificationsActive } from "react-icons/md";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db, auth } from "../../Firebase";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom"; // Import Link here
 import "./Header.css";
-import { useColorModeValue } from "@chakra-ui/react";
+import "../Sidebar/Sidebar.css";
+import { MdHome } from "react-icons/md";
+import { BiTransfer } from "react-icons/bi";
+import { MdOutlineManageAccounts } from "react-icons/md";
+import { LuLayers } from "react-icons/lu";
+import { CiCreditCard2 } from "react-icons/ci";
+import { FaHandHoldingUsd } from "react-icons/fa";
+import { MdDesignServices } from "react-icons/md";
+import { TbReportMoney } from "react-icons/tb";
+import { IoMdInformationCircleOutline } from "react-icons/io";
+import { IoIosAddCircleOutline } from "react-icons/io";
+import { IoIosMenu } from "react-icons/io";
 
 const Header = () => {
   const defaultAvatar = "/images/avatar.png";
@@ -35,6 +46,11 @@ const Header = () => {
   const color = useColorModeValue("white", "gray.800");
   const ho = useColorModeValue("white", "gray.800");
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const {
+    isOpen: settingsOpen,
+    onOpen: openSettings,
+    onClose: closeSettings,
+  } = useDisclosure();
   const navigate = useNavigate();
 
   const fetchAvatar = async () => {
@@ -118,11 +134,72 @@ const Header = () => {
               BankDash.
             </Text>
           </Flex>
-          <Heading fontSize="30px" color="#343C6A"
-          display={{md:"block", base:"none" }}
+          <Heading
+            fontSize="30px"
+            color="#343C6A"
+            display={{ md: "block", base: "none" }}
           >
             Overview
           </Heading>
+          <Button
+            onClick={openSettings}
+            display={{ md: "none", base: "block" }}
+          >
+            <IoIosMenu />
+          </Button>
+          <Drawer
+            placement="left"
+            onClose={closeSettings}
+            isOpen={settingsOpen}
+          >
+            <DrawerOverlay />
+            <DrawerContent>
+              <DrawerCloseButton />
+              <DrawerHeader>Menu</DrawerHeader>
+              <DrawerBody>
+                <Link to="/dashboard" className="sidebar-link">
+                  <MdHome />
+                  <i className="icon-home"></i> Dashboard
+                </Link>
+                <Link to="/transactions" className="sidebar-link">
+                  <BiTransfer />
+                  <i className="icon-transactions"></i> Transactions
+                </Link>
+                <Link to="/accounts" className="sidebar-link">
+                  <MdOutlineManageAccounts />
+                  <i className="icon-accounts"></i> Accounts
+                </Link>
+                <Link to="/investments" className="sidebar-link">
+                  <LuLayers />
+                  <i className="icon-investments"></i> Investments
+                </Link>
+                <Link to="/credit-cards" className="sidebar-link">
+                  <CiCreditCard2 />
+                  <i className="icon-credit-cards"></i> Credit Cards
+                </Link>
+                <Link to="/loans" className="sidebar-link">
+                  <FaHandHoldingUsd />
+                  <i className="icon-loans"></i> Loans
+                </Link>
+                <Link to="/services" className="sidebar-link">
+                  <MdDesignServices />
+                  <i className="icon-services"></i> Services
+                </Link>
+                <Link to="/privileges" className="sidebar-link">
+                  <TbReportMoney />
+                  <i className="icon-privileges"></i> My Privileges
+                </Link>
+                <Link to="/settings" className="sidebar-link">
+                  <IoMdInformationCircleOutline />
+                  <i className="icon-settings"></i> Account
+                </Link>
+                <Link to="/addCard" className="sidebar-link">
+                  <IoIosAddCircleOutline />
+                  <i className="icon-settings"></i> Add Card
+                </Link>
+              </DrawerBody>
+            </DrawerContent>
+          </Drawer>
 
           <Box
             w={"max-content"}
