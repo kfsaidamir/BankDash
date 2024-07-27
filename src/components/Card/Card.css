@@ -1,0 +1,258 @@
+/* src/components/Card/Card.css */
+
+/* Основные стили для карты */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  height: 200px;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+}
+
+.card .card-number {
+  font-size: 1.4em;
+  letter-spacing: 2px;
+  margin: 10px 0;
+}
+
+.card .card-expiry {
+  font-size: 0.9em;
+}
+
+.card .card-cvv {
+  font-size: 0.9em;
+}
+
+.card .card-logo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: auto;
+}
+
+.card .card-chip {
+  position: absolute;
+  top: 20%;
+  left: 15px;
+  width: 40px;
+  height: 30px;
+  background: #f1c40f;
+  border-radius: 5px;
+  transform: translateY(-50%);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.card .card-chip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card .card-brand {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.card .card-brand svg {
+  margin-right: 10px;
+  width: 25px;
+  height: auto;
+}
+
+.card .card-brand span {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.card .card-expiry {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.card .card-delete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.card .card-delete:hover {
+  background: #c0392b;
+}
+
+.card .card-delete svg {
+  width: 16px;
+  height: 16px;
+}
+
+.card .card-delete-tooltip {
+  position: absolute;
+  top: -40px;
+  right: 10px;
+  background: #fff;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.card:hover .card-delete-tooltip {
+  display: block;
+}
+
+/* Стили для карт в модальном окне */
+.card-modal {
+  padding: 15px;
+  border-radius: 12px;
+  border-width: 1px;
+  border-color: #ddd;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  margin-bottom: 15px;
+  cursor: pointer;
+  text-align: center; /* Центрирование текста */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-modal:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.card-chip-modal {
+  background: #f1c40f;
+  width: 40px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 0 auto 10px; /* Центрирование чипа */
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.card-modal-number {
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.card-modal-expiry {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.card-modal-cvv {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.card-modal-brand {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1em;
+}
+
+.card-modal-brand span {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+/* Новый стиль для звезды по центру */
+.card-modal-star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: #f39c12;
+}
+
+/* Новый стиль для имени владельца */
+.card-modal-owner {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #ecf0f1;
+}
+
+/* Стили для удаления карты в модальном окне */
+.card-modal-delete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.card-modal-delete:hover {
+  background: #c0392b;
+}
+
+.card-modal-delete svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Стили для карточек в двух колонках */
+.card-container {
+  width: 100%;
+}

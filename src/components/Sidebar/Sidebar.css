@@ -1,36 +1,121 @@
+/* Sidebar.css */
+
 .sidebar {
-    width: 12%;
-    height: 100vh;
-    padding-top: 20px;
-    border-right: 1px solid #e8eaec;
-    position: fixed;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляет тень для визуального отделения */
+  width: 12%;
+  height: 100vh;
+  border-right: 1px solid #e8eaec;
+  position: fixed;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  z-index: 1000;
+  overflow-y: auto; 
+  transition: width 0.3s ease;
 }
 
+/* Стили для ссылок в боковой панели */
 .sidebar-link {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    color: #6c757d;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: #6c757d;
+  gap: 20px;
+  text-decoration: none;
+  border-radius: 5px; /* Закругление углов ссылок */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Плавные изменения фона и цвета */
 }
 
 .sidebar-link:hover {
-    background-color: #e9ecef;
-    color: #2236a8;
+  background-color: #e9ecef;
+  color: #2236a8;
 }
 
+.sidebar-link.active-link {
+  background-color: #2176c4; /* Цвет фона для активной ссылки */
+  color: #fff; /* Цвет текста для активной ссылки */
+}
+
+/* Стили для иконок в ссылках */
 .sidebar-link i {
-    margin-right: 10px;
+  margin-right: 10px;
+  font-size: 20px; /* Размер иконки */
 }
+
+/* Кнопка для открытия/закрытия меню */
 .menu-button {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+    border-right: transparent;
+    width: 100%; /* Ширина для мобильных устройств */
+    position: relative; /* Относительное позиционирование для мобильных устройств */
   }
 
-  @media (max-width:768px) {
-    .sidebar {
-        display: none;
-        border-right:  transparent;
-    }
+  /* Временно скрываем ссылки на мобильных устройствах */
+  .sidebar-link {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
   }
+
+  .sidebar-link i {
+    margin-right: 0; /* Убираем отступ для иконок на мобильных устройствах */
+  }
+
+  .sidebar-link.active-link {
+    background-color: #2176c4; /* Цвет фона для активной ссылки */
+    color: #fff; /* Цвет текста для активной ссылки */
+  }
+}
+
+@media (max-width: 920px) {
+  .sidebar {
+    display: none;
+    border-right: transparent;
+    width: 100%; /* Ширина для мобильных устройств */
+    position: relative; /* Относительное позиционирование для мобильных устройств */
+  }
+
+  /* Временно скрываем ссылки на мобильных устройствах */
+  .sidebar-link {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .sidebar-link i {
+    margin-right: 0; /* Убираем отступ для иконок на мобильных устройствах */
+  }
+
+  .sidebar-link.active-link {
+    background-color: #2176c4; /* Цвет фона для активной ссылки */
+    color: #fff; /* Цвет текста для активной ссылки */
+  }
+}
+
+/* Стили для кнопки меню */
+.menu-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+  background-color: #2176c4;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.menu-button:hover {
+  background-color: #1a5a9e;
+}

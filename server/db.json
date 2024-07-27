@@ -1,0 +1,96 @@
+{
+  "users": [
+    {
+      "id": "983c",
+      "email": "miraziz@gmail.com",
+      "name": "Mirzizz",
+      "lastVisited": "2024-07-27T10:21:29.865Z",
+      "avatar": ""
+    },
+    {
+      "id": "a50c",
+      "email": "saidamir@gmail.com",
+      "name": "Saidamir",
+      "lastVisited": "2024-07-26T11:30:53.469Z",
+      "avatar": ""
+    },
+    {
+      "id": "99c3",
+      "email": "yusuf@gmail.com",
+      "name": "Muhammad Yusuf",
+      "lastVisited": "2024-07-06T11:35:55.389Z"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "3e64",
+      "name": "Services",
+      "amount": 1,
+      "type": "Transfer",
+      "status": "buyed",
+      "date": "2024-07-25T13:45:27.645Z"
+    },
+    {
+      "id": "e017",
+      "name": "Shopping ",
+      "amount": 30,
+      "type": "Transfer",
+      "status": "buyed",
+      "date": "2024-07-26T11:06:38.879Z"
+    },
+    {
+      "id": "92d8",
+      "name": "Services",
+      "amount": 20,
+      "type": "Transfer",
+      "status": "buyed",
+      "date": "2024-07-27T10:20:31.883Z"
+    }
+  ],
+  "cards": [
+    {
+      "id": "e0ed",
+      "name": "sss ss",
+      "cardNumber": "1212-1222-1212-1212",
+      "expiryDate": "12/12",
+      "cvv": "121",
+      "type": "mastercard",
+      "color": "#43a811",
+      "userId": "jSt3ylE7X7PBPAZu7EAcN3nuNT53",
+      "balance": 0
+    },
+    {
+      "id": "6725",
+      "name": "sss ss",
+      "cardNumber": "0000-0000-0000-0000",
+      "expiryDate": "01/27",
+      "cvv": "111",
+      "type": "mastercard",
+      "color": "#fb1fc0",
+      "userId": "hL26vImcQAVfrwDaLiKrnW6DaUS2",
+      "balance": 271.20000000000005
+    },
+    {
+      "id": "56da",
+      "name": "sss ss",
+      "cardNumber": "1111-1111-1111-1111",
+      "expiryDate": "11/11",
+      "cvv": "111",
+      "type": "mastercard",
+      "color": "#fb3266",
+      "userId": "jsK3DBsTe6WNGvIkrev8gqjCnct1",
+      "balance": 205
+    },
+    {
+      "id": "c0f5",
+      "name": "sss ss",
+      "cardNumber": "2222-2222-2222-2222",
+      "expiryDate": "22/22",
+      "cvv": "222",
+      "type": "mastercard",
+      "color": "#693d98",
+      "userId": "hL26vImcQAVfrwDaLiKrnW6DaUS2",
+      "balance": 0
+    }
+  ]
+}

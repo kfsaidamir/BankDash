@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../Firebase";
 import { Input, Button, Text, FormControl, FormLabel, VStack, Center, SlideFade } from "@chakra-ui/react";
-import MotionBox from "./MotionBox";
-import "./styles.css"; // Импортируем файл стилей
 
 const Account = () => {
   const [email, setEmail] = useState("");
@@ -48,7 +46,7 @@ const Account = () => {
           <VStack spacing={4}>
             <FormControl isRequired>
               <FormLabel>Электронная почта</FormLabel>
-              <Input
+              <Input  
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 type="email"

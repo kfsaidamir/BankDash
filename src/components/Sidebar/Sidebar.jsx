@@ -1,66 +1,63 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import "./Sidebar.css";
-import { MdHome } from "react-icons/md";
+import { NavLink } from 'react-router-dom';
+import { MdHome, MdOutlineManageAccounts, MdDesignServices } from "react-icons/md";
 import { BiTransfer } from "react-icons/bi";
-import { MdOutlineManageAccounts } from "react-icons/md";
 import { LuLayers } from "react-icons/lu";
 import { CiCreditCard2 } from "react-icons/ci";
 import { FaHandHoldingUsd } from "react-icons/fa";
-import { MdDesignServices } from "react-icons/md";
 import { TbReportMoney } from "react-icons/tb";
-import { IoMdInformationCircleOutline } from "react-icons/io";
-import { IoIosAddCircleOutline } from "react-icons/io";
-import { Box } from "@chakra-ui/react";
-
+import { IoMdInformationCircleOutline, IoIosAddCircleOutline } from "react-icons/io";
+import { FiMenu } from "react-icons/fi";
 
 const Sidebar = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   return (
-    <div className="sidebar">
-      <Box display={{ md: "block", base: "none" }}>
-        <Link to="/dashboard" className="sidebar-link">
+    <>
+      <div className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
+        <NavLink to="/dashboard" className="sidebar-link" activeClassName="active">
           <MdHome />
-          <i className="icon-home"></i> Dashboard
-        </Link>
-        <Link to="/transactions" className="sidebar-link">
+          <span className="link-text">Dashboard</span>
+        </NavLink>
+        <NavLink to="/transactions" className="sidebar-link" activeClassName="active">
           <BiTransfer />
-          <i className="icon-transactions"></i> Transactions
-        </Link>
-        <Link to="/accounts" className="sidebar-link">
+          <span className="link-text">Transactions</span>
+        </NavLink>
+        <NavLink to="/accounts" className="sidebar-link" activeClassName="active">
           <MdOutlineManageAccounts />
-          <i className="icon-accounts"></i> Accounts
-        </Link>
-        <Link to="/investments" className="sidebar-link">
-          <LuLayers />
-          <i className="icon-investments"></i> Investments
-        </Link>
-        <Link to="/credit-cards" className="sidebar-link">
+          <span className="link-text">Accounts</span>
+        </NavLink>
+        <NavLink to="/cards" className="sidebar-link" activeClassName="active">
           <CiCreditCard2 />
-          <i className="icon-credit-cards"></i> Credit Cards
-        </Link>
-        <Link to="/loans" className="sidebar-link">
+          <span className="link-text">Credit Cards</span>
+        </NavLink>
+        <NavLink to="/investments" className="sidebar-link" activeClassName="active">
+          <LuLayers />
+          <span className="link-text">Investments</span>
+        </NavLink>
+        <NavLink to="" className="sidebar-link" activeClassName="active">
           <FaHandHoldingUsd />
-          <i className="icon-loans"></i> Loans
-        </Link>
-        <Link to="/services" className="sidebar-link">
+          <span className="link-text">Loans</span>
+        </NavLink>
+        <NavLink to="" className="sidebar-link" activeClassName="active">
           <MdDesignServices />
-          <i className="icon-services"></i> Services
-        </Link>
-        <Link to="/privileges" className="sidebar-link">
+          <span className="link-text">Services</span>
+        </NavLink>
+        <NavLink to="" className="sidebar-link" activeClassName="active">
           <TbReportMoney />
-          <i className="icon-privileges"></i> My Privileges
-        </Link>
-        <Link to="/settings" className="sidebar-link">
-          <IoMdInformationCircleOutline />
-          <i className="icon-settings"></i> Account
-        </Link>
-        <Link to="/addCard" className="sidebar-link">
-          <IoIosAddCircleOutline />
-          <i className="icon-settings"></i> Add Card
-        </Link>
-      </Box>
-    </div>
+          <span className="link-text">My Privileges</span>
+        </NavLink>
+        <NavLink to="/admin" className="sidebar-link" activeClassName="active">
+          <MdOutlineManageAccounts />
+          <span className="link-text">Admin</span>
+        </NavLink>
+        <NavLink to="/register" className="sidebar-link" activeClassName="active">
+          <MdHome />
+          <span className="link-text">Register</span>
+        </NavLink>
+      </div>
+    </>
   );
 };
 
